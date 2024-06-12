@@ -21,6 +21,14 @@ class Exponential {
 };
 
 bool operator<(const Exponential &lhs, const Exponential &rhs) {
+    /**
+     * Result may be overflow if compute base ^ exponent directly.
+     * So, based on below principle
+     *    a^x < b^y
+     * => log(a^x) < log(b^y)
+     * => x * log(a) < y * log(b)
+     * compute exponent * log(base) to avoid overflow.
+     */
     return lhs.exponent * std::log(static_cast<double>(lhs.base)) <
            rhs.exponent * std::log(static_cast<double>(rhs.base));
 }
