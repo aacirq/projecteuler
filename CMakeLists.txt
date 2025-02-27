@@ -21,4 +21,6 @@ function(add_solver EXE_NAME)
     add_executable(${EXE_NAME} ${ARGN})
 endfunction()
 
+add_subdirectory(problem34)
+add_subdirectory(problem35)
 add_subdirectory(problem52)
