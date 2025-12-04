@@ -23,4 +23,8 @@ endfunction()
 
 add_subdirectory(problem34)
 add_subdirectory(problem35)
+add_subdirectory(problem36)
+add_subdirectory(problem37)
+add_subdirectory(problem38)
+add_subdirectory(problem39)
 add_subdirectory(problem52)
