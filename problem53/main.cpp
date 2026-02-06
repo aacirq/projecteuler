@@ -32,21 +32,6 @@ int main()
                 ++result;
             }
         }
-
-        // for (uint64_t r = 1; r * 2 < n; ++r) {
-        //     if (combBigThanMillion(n, r)) {
-        //         std::cout << "C(" << n << "," << r << ") 2" << std::endl;;
-        //         result += 2;
-        //     }
-        // }
-        // uint64_t r = n / 2;
-        // if (n % 2 == 1) {
-        //     ++r;
-        // }
-        // if (combBigThanMillion(n, r)) {
-        //     std::cout << "C(" << n << "," << r << ") 1" << std::endl;
-        //     ++result;
-        // }
     }
 
     std::cout << "Result: " << result << std::endl;
