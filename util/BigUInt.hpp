@@ -21,6 +21,17 @@ public:
         }
     }
 
+    explicit BigUInt(const std::vector<char>& _hex_digits)
+        : hex_digits(_hex_digits)
+    {
+        while (!hex_digits.empty()) {
+            if (hex_digits.back() != 0) {
+                break;
+            }
+            hex_digits.pop_back();
+        }
+    }
+
     BigUInt operator+(const BigUInt& rhs) const
     {
         BigUInt result {0};
@@ -37,6 +48,10 @@ public:
             }
             result.hex_digits.push_back(static_cast<char>(cur_sum % 10));
             carry = cur_sum / 10;
+        }
+        while (carry != 0) {
+            result.hex_digits.push_back(static_cast<char>(carry % 10));
+            carry /= 10;
         }
         return result;
     }
@@ -68,6 +83,11 @@ public:
         }
 
         return result;
+    }
+
+    [[nodiscard]] std::vector<char> data() const
+    {
+        return hex_digits;
     }
 
 private:
